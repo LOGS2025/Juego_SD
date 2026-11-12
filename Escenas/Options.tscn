@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cc2lxmedysg40"]
+
+[ext_resource type="Script" uid="uid://b4da8q1bbsiqe" path="res://Scripts/options.gd" id="1_tjo0c"]
+[ext_resource type="Texture2D" uid="uid://djxhagqn8vb5c" path="res://Imagenes/Gemini_Generated_Image_vbvudgvbvudgvbvu.jpg" id="2_ywiuv"]
+
+[node name="Options" type="Control" unique_id=1784202591]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tjo0c")
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=462057445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27450982, 0.2509804, 0.91764706, 0.23529412)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1329350038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ywiuv")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1911239538]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.25
+offset_top = -86.5
+offset_right = 343.25
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Volumen" type="Button" parent="VBoxContainer" unique_id=1151903563]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Volumen"
+
+[node name="Resolution" type="Button" parent="VBoxContainer" unique_id=700945223]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Resolución"
+
+[node name="Back" type="Button" parent="VBoxContainer" unique_id=1123364371]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "Atras"
+
+[connection signal="pressed" from="VBoxContainer/Volumen" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolution" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_exit_pressed"]

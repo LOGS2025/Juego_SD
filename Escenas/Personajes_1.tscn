@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://buk8eden52i2v"]
+
+[ext_resource type="Texture2D" uid="uid://dqm3p82gj5abd" path="res://Imagenes/Gemini_Generated_Image_q82t97q82t97q82t.jpg" id="1_5gxj6"]
+[ext_resource type="Script" uid="uid://ne8ielkruqvx" path="res://Scripts/personajes_1.gd" id="1_8p56q"]
+[ext_resource type="ArrayMesh" uid="uid://bav5xyc12pas6" path="res://Figuras 3D/tripo_convert_294ee730-f341-4116-bd25-f9a5884f7983.obj" id="2_sdfl2"]
+
+[node name="Control" type="Control" unique_id=391006242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8p56q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=129367791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.17254902)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1453988315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5gxj6")
+expand_mode = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1472204041]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1118198581]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=88967167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2.5)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=367225583]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1329892221]
+transform = Transform3D(0.64278764, 0, -0.76604444, 0, 1, 0, 0.76604444, 0, 0.64278764, -1.2, 0, 0)
+mesh = ExtResource("2_sdfl2")
+
+[node name="Button" type="Button" parent="." unique_id=979183677]
+layout_mode = 1
+offset_left = 28.0
+offset_top = 560.0
+offset_right = 176.0
+offset_bottom = 627.0
+text = "Atras"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
